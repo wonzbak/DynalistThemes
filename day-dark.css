@@ -1,0 +1,112 @@
+
+
+.u-use-pref-font{
+  font-family: Roboto,  sans-serif;
+}
+
+
+/* dynalist */
+.AppHeader, .AppContainer {
+    background-color: rgb(42, 49, 53);
+    box-shadow: none;
+}
+
+.pane-item-header.selected {
+    background: rgb(42, 49, 53);
+}
+
+.is-desktop .LeftPaneContainer,
+.is-desktop .LeftPaneContainer-nav,
+.is-desktop .Pane,
+.is-desktop .Pane-header,
+.is-desktop .popup-message-banner,
+.is-desktop .LeftPaneContainer-navItem {
+    background-color: rgb(53, 60, 63);
+    /*box-shadow: none; */
+}
+
+.is-desktop .LeftPaneSlidebarContainer {
+    box-shadow: none;
+}
+
+.LeftPaneSlidebarContainer {
+    top: 0;
+    /* z-index: 1000;*/
+}
+
+.LeftPaneContaine-nav {
+    box-shadow: 0;
+}
+
+.finder-result.is-selected {
+    background: #3a5760;
+}
+
+.Node.is-selected {
+  background: #3a5760;
+}
+
+.DocumentBreadcrumb {
+    min-height: 12px;
+    padding: 5px 0 0 10px;
+}
+
+.is-desktop .Document-rootNode {
+    padding: 0 20px;
+}
+
+.ContextMenu {
+    box-shadow: none;
+    z-index: 1001;
+}
+
+.DocumentTools-overlay {
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #353c3f;
+}
+
+.pane-item.DocumentItem.is-open > .pane-item-header {
+    background-color: rgb(42, 49, 53);
+}
+
+.pane-item-header.hover {
+   background-color: rgb(42, 49, 53);
+}
+
+input:focus, textarea:focus, select:focus, input:hover, textarea:hover, select:hover {
+    border-color: #353c3f;
+}
+
+/* tags */
+.DocumentContainer.has-tagBackground .node-tag {
+    background-color:  #2e758b;
+    color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0px 8px;
+
+}
+
+a.node-tag[title="Filter #Jira"] {
+    background-color:  #354a6c;
+    color: white;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.DocumentContainer.has-tagBackground a.node-tag[title="Filter #WIP"] {
+    background-color: 1px solid #6F5A02;
+}
+
+/* Tasks */
+.Node.is-checked > .Node-self .Node-content, .Node.is-checked > .Node-self .Node-renderedContent {
+    text-decoration: none;
+    color: grey;
+}
+
+/* Tasks completed*/
+.Node.is-checked > .Node-self .Node-renderedContent::before {
+  content: ' ✔ ';
+  color: #00AC00;
+}
