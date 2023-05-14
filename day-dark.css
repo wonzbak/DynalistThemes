@@ -1,4 +1,31 @@
+:root {
+    --selection-bg-color: #3a5760;
 
+    --document-bg-color: #263238;
+    --item-selected-bg-color: #1c252a;
+
+    --completed-text-color: grey;
+    --completed-ckeck-icon-color: #00AC00;
+
+    --tag-bg-color: #2e758b;
+    --tag-text-color: #FFF;
+
+    --tag-todo-bg-color: #fc6b03;
+    --tag-wip-bg-color: #FFD923;
+
+}
+
+::selection {
+  background: var(--selection-bg-color);
+}
+::-moz-selection {
+  background: var(--selection-bg-color);
+}
+
+
+.Suggestions-item.is-current, .Suggestions-dropdownLoadAll:hover {
+    background: var(--selection-bg-color);
+}
 
 .u-use-pref-font{
   font-family: Roboto,  sans-serif;
@@ -7,22 +34,22 @@
 
 /* dynalist */
 .AppHeader, .AppContainer {
-    background-color: rgb(42, 49, 53);
+    background-color: var(--document-bg-color);
     box-shadow: none;
 }
 
 .pane-item-header.selected {
-    background: rgb(42, 49, 53);
+    background: var(--document-bg-color);
 }
 
+/* Left pane  */
 .is-desktop .LeftPaneContainer,
 .is-desktop .LeftPaneContainer-nav,
 .is-desktop .Pane,
 .is-desktop .Pane-header,
 .is-desktop .popup-message-banner,
 .is-desktop .LeftPaneContainer-navItem {
-    background-color: rgb(53, 60, 63);
-    /*box-shadow: none; */
+    background: var(--document-bg-color);
 }
 
 .is-desktop .LeftPaneSlidebarContainer {
@@ -31,7 +58,6 @@
 
 .LeftPaneSlidebarContainer {
     top: 0;
-    /* z-index: 1000;*/
 }
 
 .LeftPaneContaine-nav {
@@ -39,11 +65,17 @@
 }
 
 .finder-result.is-selected {
-    background: #3a5760;
+    background: var(--selection-bg-color);
+}
+
+/* Document Nodes */
+/* Node hover cursor */
+.Node-self.is-hovering {
+    background-color: var(--item-selected-bg-color);
 }
 
 .Node.is-selected {
-  background: #3a5760;
+  background: var(--item-selected-bg-color);
 }
 
 .DocumentBreadcrumb {
@@ -80,33 +112,29 @@ input:focus, textarea:focus, select:focus, input:hover, textarea:hover, select:h
 
 /* tags */
 .DocumentContainer.has-tagBackground .node-tag {
-    background-color:  #2e758b;
-    color: white;
-    border-radius: 5px;
+    background-color:  var(--tag-bg-color);
+    color: var(--tag-text-color);
     box-sizing: border-box;
-    padding: 0px 8px;
-
-}
-
-a.node-tag[title="Filter #Jira"] {
-    background-color:  #354a6c;
-    color: white;
-    padding: 2px;
+    padding: 2px 6px;
     border-radius: 4px;
 }
 
+.DocumentContainer.has-tagBackground .node-tag[title="Filter #Todo"] {
+    background-color: var(--tag-todo-bg-color);
+}
+
 .DocumentContainer.has-tagBackground a.node-tag[title="Filter #WIP"] {
-    background-color: 1px solid #6F5A02;
+    background-color: var(--tag-wip-bg-color);
 }
 
 /* Tasks */
 .Node.is-checked > .Node-self .Node-content, .Node.is-checked > .Node-self .Node-renderedContent {
     text-decoration: none;
-    color: grey;
+    color: var(--completed-text-color);
 }
 
 /* Tasks completed*/
 .Node.is-checked > .Node-self .Node-renderedContent::before {
   content: ' ✔ ';
-  color: #00AC00;
+  color: var(--completed-ckeck-icon-color);
 }
